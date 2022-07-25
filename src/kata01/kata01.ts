@@ -6,6 +6,6 @@ export const printNumber: PrintNumberFn = (nbr: number) => {
     // Mais ici, on n'aime pas la simplicité.
     // À toi de jouer :)
     //console.log(str); // << interdit.
-
-    process.stdout.write(nbr + '\n');
+    let nbrString: string = nbr + '';
+    process.stdout.write(nbrString);
 }
