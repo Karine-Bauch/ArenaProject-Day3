@@ -1,0 +1,21 @@
+{
+  "name": "challenges",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/arenaproject/challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/arenaproject/challenges/issues"
+  },
+  "homepage": "https://bitbucket.org/arenaproject/challenges#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "typescript": "^4.7.4"
+  }
+}
