@@ -2,7 +2,7 @@ export type CallbackFn = (elem: unknown) => boolean;
 export type FilterFn = (arr: unknown[], cb: CallbackFn) => unknown[];
 
 export const isEqual: CallbackFn = (elem: unknown) => {
-    if (elem as number <= 5) {
+    if (elem <= 5) {
         return true;
     } else {
         return false;
