@@ -11,9 +11,9 @@ export const reverseString: ReverseStringFn = (str: string) => {
 
     let reverseStr: string = '';
     let i: number = length - 1;
-    process.stdout.write(str[i] + '\n')
+    // process.stdout.write(str[i] + '\n')
     while (str[i] !== undefined) {
-        process.stdout.write(str[i] + '\n')
+        // process.stdout.write(str[i] + '\n')
         reverseStr += str[i];
         i--;
     };
