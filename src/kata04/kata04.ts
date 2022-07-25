@@ -1,8 +1,8 @@
 export type SplitFn = (str: string) => string[];
 
 export const split: SplitFn = (str: string) => {
-    let iStr = 0;
-    let iArr = 0;
+    let iStr: number = 0;
+    let iArr: number = 0;
     let strArr: string[] = [];
     while (str[iStr] !== undefined) {
         strArr[iArr] = str[iStr];
@@ -12,7 +12,7 @@ export const split: SplitFn = (str: string) => {
     return strArr;
 
     /* Methode avec push mais interdit me semble-t-il
-    let i = 0;
+    let i: number = 0;
     let strArr: string[] = [];
     while (str[i] !== undefined) {
         strArr.push(str[i]);
