@@ -1,9 +1,9 @@
 export type CallbackFn = (elem: unknown) => unknown;
 export type ForEachFn = (arr: unknown[], cb: CallbackFn) => void;
 
-export const printString: CallbackFn = (elem: unknown) => {
-    process.stdout.write(elem as string + '\n');
-}
+export const callback: CallbackFn = (elem: unknown) => {
+    let mapedElem: number = elem as number * 2;
+} 
 
 export const forEach: ForEachFn = (arr: unknown[], cb: CallbackFn) => {
 
@@ -15,7 +15,7 @@ export const forEach: ForEachFn = (arr: unknown[], cb: CallbackFn) => {
 
     let i:number = 0;
     while (i <= length - 1) {
-        cb(arr[i] as string) // je réutilise le kata01 pour afficher un string
+        cb(arr[i]) // je réutilise le kata01 pour afficher un string
         i++;
     }
 }

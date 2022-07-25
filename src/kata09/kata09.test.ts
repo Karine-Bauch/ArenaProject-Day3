@@ -1,6 +1,5 @@
 
-import { forEach } from "./kata09";
-import { printString } from "./kata00";
+import { forEach, printString } from "./kata09";
 
 // Tu peux utiliser ce fichier pour tester ton code.
 // À toi de t'organiser pour tester comme tu le souhaites.
