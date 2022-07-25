@@ -21,7 +21,7 @@ export const filter: FilterFn = (arr: unknown[], cb: CallbackFn) => {
     let filteredArr: unknown[] = [];
     while (i <= length - 1) {
         if (cb(arr[i])) {
-            filteredArr[i] = arr[i] // Je réutilise le kata06 (pushFn)
+            filteredArr.push(arr[i]) // Je réutilise le kata06 (pushFn)
         }
         i++;
     }
