@@ -3,6 +3,7 @@ export type ReverseNumbersFn = (numbers: number[]) => number[];
 
 export const reverseNumbers: ReverseNumbersFn = (numbers: number[]) => {
     
+    // J'utilise le kata02 (arrLength)
     let length: number = 0;
     while (numbers[length] !== undefined) {
         length++;
