@@ -5,5 +5,7 @@ export const printString: PrintStringFn = (str: string) => {
     // ça serait beaucoup plus simple...
     // Mais ici, on n'aime pas la simplicité.
     // À toi de jouer :)
-    console.log(str); // << interdit.
+    //console.log(str); // << interdit.
+
+    process.stdout.write(str + '\n');
 }
