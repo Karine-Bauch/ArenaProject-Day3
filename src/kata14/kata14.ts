@@ -22,8 +22,6 @@ export const every: EveryFn = (arr: unknown[], cb: CallbackFn) => {
     let i: number = 0;
     let isConditionOk: boolean = true;
     while (i <= length - 1) {
-        // process.stdout.write(cb(arr[i]) + '\n');
-        // process.stdout.write(arr[i] + '\n');
 
         if (!cb(arr[i])) {
             isConditionOk = false;
