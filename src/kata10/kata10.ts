@@ -1,11 +1,11 @@
 export type CallbackFn = (elem: unknown) => unknown;
-export type ForEachFn = (arr: unknown[], cb: CallbackFn) => void;
+export type MapFn = (arr: unknown[], cb: CallbackFn) => unknown[];
 
-export const callback: CallbackFn = (elem: unknown) => {
-    let mapedElem: number = elem as number * 2;
+export const doble: CallbackFn = (elem: unknown) => {
+    return elem as number * 2;
 } 
 
-export const forEach: ForEachFn = (arr: unknown[], cb: CallbackFn) => {
+export const map: MapFn = (arr: unknown[], cb: CallbackFn) => {
 
     // j'utilise le kata02 (arrLength)
     let length: number = 0;
@@ -13,9 +13,13 @@ export const forEach: ForEachFn = (arr: unknown[], cb: CallbackFn) => {
         length++;
     };
 
-    let i:number = 0;
+    let i: number = 0;
+    let mapedArr: unknown[] = [];
     while (i <= length - 1) {
-        cb(arr[i]) // je réutilise le kata01 pour afficher un string
+        // process.stdout.write(arr[i] + '');
+        mapedArr[i] = cb(arr[i]) // Je réutilise le kata06 (pushFn)
         i++;
     }
+
+    return mapedArr;
 }

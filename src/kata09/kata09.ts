@@ -2,7 +2,7 @@ export type CallbackFn = (elem: unknown) => unknown;
 export type ForEachFn = (arr: unknown[], cb: CallbackFn) => void;
 
 export const printString: CallbackFn = (elem: unknown) => {
-    process.stdout.write(elem as string + '\n');
+    process.stdout.write(elem as string + '');
 }
 
 export const forEach: ForEachFn = (arr: unknown[], cb: CallbackFn) => {
