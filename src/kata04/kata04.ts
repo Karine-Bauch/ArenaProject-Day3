@@ -1,13 +1,11 @@
 export type SplitFn = (str: string) => string[];
 
 export const split: SplitFn = (str: string) => {
-    let iStr: number = 0;
-    let iArr: number = 0;
+    let i: number = 0;
     let strArr: string[] = [];
-    while (str[iStr] !== undefined) {
-        strArr[iArr] = str[iStr];
-        iStr++
-        iArr++;
+    while (str[i] !== undefined) {
+        strArr[i] = str[i];
+        i++;
     };
     return strArr;
 
