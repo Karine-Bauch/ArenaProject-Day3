@@ -2,50 +2,59 @@
 export type CallbackFn = (elem: unknown) => boolean;
 export type DiffFn = (arrA: number[], arrB: number[]) => number[];
 
+const arrLength = (arr: unknown[]) => {
+  let length: number = 0;
+  while (arr[length] !== undefined) {
+      length++;
+  };
+  return length;
+};
+
+const find = (arr: unknown[], cb: CallbackFn) => {
+
+  let length: number = arrLength(arr);
+
+  let i: number = 0;
+  let findedElem: unknown;
+  while (i <= length - 1) {
+      // process.stdout.write(cb(arr[i]) + '\n');
+      // process.stdout.write(arr[i] + '\n');
+
+      if (cb(arr[i])) {
+          findedElem = arr[i]; // Je réutilise le kata06 (pushFn)
+          return findedElem;
+      }
+      i++;
+  }
+  return findedElem;
+};
+
+const push = (arr: any, x: number, item: any) => {
+    arr[x] = item;
+    return arr;
+}
+
 const filter = (arr: unknown[], cb: CallbackFn) => {
 
-    // j'utilise le kata02 (arrLength)
-    let length: number = 0;
-    while (arr[length] !== undefined) {
-        length++;
-    };
+    let length: number = arrLength(arr);
 
-    let i: number = 0;
+    let iArr: number = 0;
+    let iFilter: number = 0;
     let filteredArr: unknown[] = [];
-    while (i <= length - 1) {
-        if (cb(arr[i])) {
-            filteredArr.push(arr[i]) // Je réutilise le kata06 (pushFn)
+    while (iArr <= length - 1) {
+        if (cb(arr[iArr])) {
+            push(filteredArr, iFilter, arr[iArr]); // Je réutilise le kata06 (pushFn)
+            iFilter++;
         }
-        i++;
+        iArr++;
     }
 
     return filteredArr;
 }
 
-const find = (arr: unknown[], cb: CallbackFn) => {
-
-    // j'utilise le kata02 (arrLength)
-    let length: number = 0;
-    while (arr[length] !== undefined) {
-        length++;
-    };
-
-    let i: number = 0;
-    let findedElem: unknown;
-    while (i <= length - 1) {
-        // process.stdout.write(cb(arr[i]) + '\n');
-        // process.stdout.write(arr[i] + '\n');
-
-        if (cb(arr[i])) {
-            findedElem = arr[i]; // Je réutilise le kata06 (pushFn)
-            return findedElem;
-        }
-        i++;
-    }
-
-    return findedElem;
-}
-
-export const diff: DiffFn = (arrA: number[], arrB: number[]) => {    
-    return filter(arrA, (itemA) => !find(arrB, (itemB) => itemA === itemB)) as number[];
+export const diff: DiffFn = (arrA: number[], arrB: number[]) => {
+    return filter(arrA, (itemA) => !find(arrB, (itemB) => (itemA === itemB))) as number[]; 
+    // Avec filter, je boucle sur chaque élément de arrA.
+    // Avec find, je prend cet item et cherche si je le trouve dans arrB
+    // Avec !find, je récupère les éléments qui n'ont pas été toruvé dans arrB
 };

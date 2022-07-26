@@ -9,21 +9,32 @@ export const isEqual: CallbackFn = (elem: unknown) => {
     }
 } 
 
-export const filter: FilterFn = (arr: unknown[], cb: CallbackFn) => {
-
-    // j'utilise le kata02 (arrLength)
+const arrLength = (arr: unknown[]) => {
     let length: number = 0;
     while (arr[length] !== undefined) {
         length++;
     };
+    return length;
+}
 
-    let i: number = 0;
+const push = (arr: any, x: number, item: any) => {
+    arr[x] = item;
+    return arr;
+}
+
+export const filter: FilterFn = (arr: unknown[], cb: CallbackFn) => {
+
+    let length: number = arrLength(arr);
+
+    let iArr: number = 0;
+    let iFilter: number = 0;
     let filteredArr: unknown[] = [];
-    while (i <= length - 1) {
-        if (cb(arr[i])) {
-            filteredArr.push(arr[i]) // Je réutilise le kata06 (pushFn)
+    while (iArr <= length - 1) {
+        if (cb(arr[iArr])) {
+            push(filteredArr, iFilter, arr[iArr]); // Je réutilise le kata06 (pushFn)
+            iFilter++;
         }
-        i++;
+        iArr++;
     }
 
     return filteredArr;

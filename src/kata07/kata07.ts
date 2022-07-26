@@ -1,13 +1,18 @@
 
 export type ReverseNumbersFn = (numbers: number[]) => number[];
 
+const arrLength = (arr: number[]) => {
+    let length: number = 0;
+    while (arr[length] !== undefined) {
+        length++;
+    };
+    return length;
+}
+
 export const reverseNumbers: ReverseNumbersFn = (numbers: number[]) => {
     
     // J'utilise le kata02 (arrLength)
-    let length: number = 0;
-    while (numbers[length] !== undefined) {
-        length++;
-    };
+    let length: number = arrLength(numbers);
 
     let i:number = 0;
     let iReverse: number = length - 1;

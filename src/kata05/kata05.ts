@@ -1,13 +1,18 @@
 
 export type ReverseStringFn = (str: string) => string;
 
-export const reverseString: ReverseStringFn = (str: string) => {
-    
-    // j'utilise le kata03 (strLength)
+const strLength = (str: string) => {
     let length: number = 0;
     while (str[length] !== undefined) {
         length++;
     };
+    return length;
+};
+
+export const reverseString: ReverseStringFn = (str: string) => {
+    
+    // j'utilise le kata03 (strLength)
+    let length: number = strLength(str);
     // process.stdout.write(length + '\n')
 
     let reverseStr: string = '';

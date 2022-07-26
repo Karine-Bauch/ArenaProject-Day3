@@ -11,13 +11,17 @@ export const isEqual: CallbackFn = (elem: unknown) => {
     }
 } 
 
-export const every: EveryFn = (arr: unknown[], cb: CallbackFn) => {
-
-    // j'utilise le kata09 (forEach)
+const arrLength = (arr: unknown[]) => {
     let length: number = 0;
     while (arr[length] !== undefined) {
         length++;
     };
+    return length;
+}
+
+export const every: EveryFn = (arr: unknown[], cb: CallbackFn) => {
+
+    let length: number = arrLength(arr);
 
     let i: number = 0;
     let isConditionOk: boolean = true;
@@ -29,6 +33,5 @@ export const every: EveryFn = (arr: unknown[], cb: CallbackFn) => {
         }
         i++;
     }
-
     return isConditionOk;
 }
