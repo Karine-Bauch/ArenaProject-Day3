@@ -1,4 +1,5 @@
 
+export type DiffFn = (arrA: string[], arrB: string[]) => string[];
 export type ConcatNFn = (strA: string, strB: string, n: number) => string;
 
 const slice = (str: string, n: number) => {
